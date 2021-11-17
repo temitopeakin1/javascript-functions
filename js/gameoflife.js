@@ -27,7 +27,8 @@ const corners = (state = []) =>
       topRight: [0, 0],
       bottomRight: [0,0]
     }
-  }
+  };
+
   const xs = state.map(([x, _]) => x);
   const ys = state.map(([_, y]) => y);
   return {
