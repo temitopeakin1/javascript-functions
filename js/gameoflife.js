@@ -21,12 +21,10 @@ const printCell = (cell, state) =>
 
 const corners = (state = []) =>
 {
-  if (state.length === 0)
-  {
-    return {
-      topRight: [0, 0],
-      bottomRight: [0,0]
-    }
+ if (state.length === 0)
+ {
+   return { bottomLeft: [0, 0], topRight: [0, 0] };
+ }
   };
 
   const xs = state.map(([x, _]) => x);
