@@ -24,7 +24,7 @@ const corners = (state = []) =>
   if (state.length === 0)
   {
     return {
-      topRight: [0, 0],
+      topBottom: [0, 0],
       bottomRight: [0,0]
     }
   };
