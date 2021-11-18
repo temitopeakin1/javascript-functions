@@ -63,10 +63,11 @@ const getNeighborsOf = ([x,y]) => [
 ];
 
 
-let getLivingNeighbors = (cell, state) =>
-{
-  return getNeighborsOf(cell).filter((n) => contains.bind(state, n))
+const getLivingNeighbors = (cell, state) => {
+  return getNeighborsOf(cell).filter((n) => contains.bind(state)(n))
 };
+
+
 
 const willBeAlive = (cell, state) =>
 {
@@ -77,8 +78,8 @@ const willBeAlive = (cell, state) =>
   );
 };
 
-const calculateNext = (state) =>
-{
+
+const calculateNext = (state) => {
   const { bottomLeft, topRight } = corners(state);
   let result = [];
   for (let y = topRight[1] + 1; y >= bottomLeft[1] - 1; y--)
@@ -90,6 +91,8 @@ const calculateNext = (state) =>
   }
   return result;
 };
+
+
 
 const iterate = (state, iterations) =>
 {
