@@ -61,7 +61,7 @@ const getNeighborsOf = ([x, y]) => [
 ];
 
 
-const getLivingNeighbors = (cell, state) =>
+getLivingNeighbors = (cell, state) =>
 {
   return getNeighborsOf(cell).filter((n) => contains.bind(state, n));
 };
