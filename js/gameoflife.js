@@ -70,7 +70,8 @@ const willBeAlive = (cell, state) =>
 {
   const livingNeighbors = getLivingNeighbors(cell, state);
   return (
-    (livingNeighbors.length === 3) || (contains.call(state, cell) && livingNeighbors.length === 2)
+    (livingNeighbors.length === 3) ||
+     (contains.call(state, cell) && livingNeighbors.length === 2)
   );
 };
 
@@ -98,7 +99,7 @@ const iterate = (state, iterations) =>
   return states;
 };
 
- main = (pattern, iterations) => {
+const main = (pattern, iterations) => {
   const results = iterate(startPatterns[pattern], iterations);
   results.forEach(r => console.log(printCells(r)));
 };
