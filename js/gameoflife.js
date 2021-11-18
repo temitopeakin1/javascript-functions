@@ -19,6 +19,8 @@ const printCell = (cell, state) =>
   return contains.call(state, cell) ? "\u25A3" : "\u25A2";
 };
 
+
+
 const corners = (state = []) => {
   if (state.length === 0) {
     return {
@@ -40,7 +42,7 @@ const printCells = (state) =>
 {
   const { bottomLeft, topRight } = corners(state);
   let accumulator = "";
-  for (let y = topRight[1]; y >= bottomLeft[1]; y++)
+  for (let y = topRight[1]; y >= bottomLeft[1]; y--)
   {
     let row = [];
     for (let x = bottomLeft[0]; x <= topRight[0]; x++)
